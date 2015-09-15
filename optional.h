@@ -1,7 +1,7 @@
-#pragma once
+#ifndef OPTIONAL_H_
+#define OPTIONAL_H_
 
 #include <memory>
-
 #include <type_traits>
 
 namespace gl {
@@ -178,3 +178,4 @@ namespace gl {
 		static_assert(sizeof(T) == 0, "Optional lvalue references are illegal.");
 	};
 }
+#endif

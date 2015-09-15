@@ -1,4 +1,5 @@
-#pragma once
+#ifndef ANY_H_
+#define ANY_H_
 
 #include <typeinfo>
 
@@ -116,3 +117,4 @@ namespace gl {
 		return static_cast<reftype>(*result);
 	}
 }
+#endif

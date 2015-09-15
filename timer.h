@@ -1,13 +1,6 @@
-//
-//  timer.h
-//  Test
-//
-//  Created by 郭磊 on 15/9/14.
-//  Copyright (c) 2015年 郭磊. All rights reserved.
-//
 
-#ifndef Test_timer_h
-#define Test_timer_h
+#ifndef TIMER_H_
+#define TIMER_H_
 
 #include<chrono>
 #include"stdint.h"

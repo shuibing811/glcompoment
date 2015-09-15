@@ -1,13 +1,5 @@
-//
-//  bounded_buffer.h
-//  Test
-//
-//  Created by 郭磊 on 15/9/14.
-//  Copyright (c) 2015年 郭磊. All rights reserved.
-//
-
-#ifndef Test_sync_buffer_h
-#define Test_sync_buffer_h
+#ifndef SYNC_DEQUE_H_
+#define SYNC_DEQUE_H_
 
 #include "circular_buffer.h"
 #include <condition_variable>

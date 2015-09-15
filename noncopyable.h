@@ -1,13 +1,5 @@
-//
-//  noncopyable.h
-//  Test
-//
-//  Created by 郭磊 on 15/9/14.
-//  Copyright (c) 2015年 郭磊. All rights reserved.
-//
-
-#ifndef Test_noncopyable_h
-#define Test_noncopyable_h
+#ifndef NONCOPYABLE_H_ 
+#define NONCOPYABLE_H_
 
 namespace gl {
     class noncopyable

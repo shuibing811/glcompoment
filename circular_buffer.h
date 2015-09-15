@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CIRCULAR_BUFFER_H_
+#define CIRCULAR_BUFFER_H_
 
 #include<stdexcept>
 #include<iterator>
@@ -661,4 +662,4 @@ namespace gl {
         allocator_type d_alloc;
     };
 }
-
+#endif
