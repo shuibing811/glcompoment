@@ -3,21 +3,24 @@
 
 #include <functional>
 
+template<typename T>
+struct function_traits;
+
 template<typename Ret,typename ... Args>
 struct function_traits<Ret(Args...)>
 {
-	using return_type = ret;
+	using return_type = Ret;
 	using function_type = Ret(Args...);
 	using pointer = Ret(*)(Args...);
 	using stl_function_type = std::function<function_type>; 
-	enum { arity = sizeof...(Args) }
+    enum { arity = sizeof...(Args) };
 	template< size_t I >
 	struct args{
 		using type = typename std::tuple_element<I,std::tuple<Args...>>::type;
 	};
 };
 
-template<typename Ret,typename ... Arga>
+template<typename Ret,typename ... Args>
 struct function_traits<Ret(*)(Args...)> : function_traits<Ret(Args...)>{
 };
 
@@ -26,7 +29,7 @@ template<typename Ret,typename ... Args>
 struct function_traits<std::function<Ret(Args...)>> : function_traits<Ret(Args...)>{
 };
 
-FUNCTION_TRAITS (...) \
+#define FUNCTION_TRAITS(...) \
 template<typename ClassType,typename Ret,typename ... Args> \
 struct function_traits<Ret(ClassType::*)(Args...) __VA_ARGS__> : function_traits<Ret(Args...)>{ \
 }; \
@@ -37,7 +40,7 @@ FUNCTION_TRAITS(volatile)
 FUNCTION_TRAITS(const volatile)
 
 template<typename Callable>
-struct function_traits<Callable> : function_traits<delctype(&Callable::operator())>{
+struct function_traits : function_traits<decltype(&Callable::operator())>{
 };
 
 template<typename FuncType>
