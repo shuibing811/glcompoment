@@ -94,8 +94,8 @@ namespace gl {
 	class bad_any_cast : public std::bad_cast {
 	public:
 		virtual const char * what() const noexcept {
-			return "boost::bad_any_cast: "
-				"failed conversion using boost::any_cast";
+			return "bad_any_cast: "
+				"failed conversion using any_cast";
 		}
 	};
 	template<typename T>
